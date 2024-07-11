@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 import 'package:learner/screens/count_1/count_example.dart';
+import 'package:learner/screens/fevorite/fevorite_screen.dart';
 import 'package:learner/screens/slider/slider_screen.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -24,7 +25,12 @@ class HomeScreen extends StatelessWidget {
                 onPressed: () {
                   GoRouter.of(context).goNamed(SliderScreen.id);
                 },
-                child: Text('Slider Screen'))
+                child: Text('Slider Screen')),
+            FilledButton(
+                onPressed: () {
+                  GoRouter.of(context).goNamed(FevoriteScreen.id);
+                },
+                child: Text('Fevorite Screen')),
           ],
         ),
       ),

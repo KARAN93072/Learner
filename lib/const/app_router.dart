@@ -1,5 +1,6 @@
 import 'package:go_router/go_router.dart';
 import 'package:learner/screens/count_1/count_example.dart';
+import 'package:learner/screens/fevorite/fevorite_screen.dart';
 import 'package:learner/screens/home/home_screen.dart';
 import 'package:learner/screens/slider/slider_screen.dart';
 
@@ -18,7 +19,11 @@ class AppRouter {
           GoRoute(
               path: 'SliderScreen',
               name: SliderScreen.id,
-              builder: (context, state) => const SliderScreen())
+              builder: (context, state) => const SliderScreen()),
+          GoRoute(
+              path: 'FevoriteScreen',
+              name: FevoriteScreen.id,
+              builder: (context, state) => const FevoriteScreen()),
         ]),
   ]);
 }

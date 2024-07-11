@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:learner/const/app_router.dart';
 import 'package:learner/screens/count_1/count_provider.dart';
+import 'package:learner/screens/fevorite/fevorite_provider.dart';
 import 'package:learner/screens/slider/slider_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -15,6 +16,7 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (_) => CountProvider()),
         ChangeNotifierProvider(create: (_) => SliderProvider()),
+        ChangeNotifierProvider(create: (_) => FevoriteProvider()),
       ],
       child: MaterialApp.router(
         routerConfig: AppRouter.router,
