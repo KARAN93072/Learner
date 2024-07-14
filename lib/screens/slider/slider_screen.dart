@@ -20,7 +20,7 @@ class SliderScreen extends StatelessWidget {
                 max: 1,
                 value: value.sValue,
                 onChanged: (newValue) {
-                  sliderProvider.setSlider(newValue);
+                  sliderProvider.setValue(newValue);
                 });
           }),
           const SizedBox(

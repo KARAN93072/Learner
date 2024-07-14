@@ -1,8 +1,10 @@
 import 'package:go_router/go_router.dart';
 import 'package:learner/screens/count_1/count_example.dart';
-import 'package:learner/screens/fevorite/fevorite_screen.dart';
+import 'package:learner/screens/fevorite/favorite_screen.dart';
+import 'package:learner/screens/fevorite/saved_favorite_users.dart';
 import 'package:learner/screens/home/home_screen.dart';
 import 'package:learner/screens/slider/slider_screen.dart';
+import 'package:learner/screens/theme_changer/dark_theme.dart';
 
 class AppRouter {
   static GoRouter router = GoRouter(routes: [
@@ -21,9 +23,20 @@ class AppRouter {
               name: SliderScreen.id,
               builder: (context, state) => const SliderScreen()),
           GoRoute(
-              path: 'FevoriteScreen',
-              name: FevoriteScreen.id,
-              builder: (context, state) => const FevoriteScreen()),
+              path: 'FavoriteScreen',
+              name: FavoriteScreen.id,
+              builder: (context, state) => const FavoriteScreen(),
+              routes: [
+                GoRoute(
+                  path: 'SavedFavoriteUsers',
+                  name: SavedFavoriteUsers.id,
+                  builder: (context, state) => const SavedFavoriteUsers(),
+                ),
+              ]),
+          GoRoute(
+              path: 'DarkThemeScreen',
+              name: DarkThemeScreen.id,
+              builder: (context, state) => const DarkThemeScreen())
         ]),
   ]);
 }

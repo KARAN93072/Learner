@@ -1,0 +1,16 @@
+import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+
+class DarkThemeScreen extends StatelessWidget {
+  const DarkThemeScreen({super.key});
+  static String id = 'DarkThemeScreen';
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Theme'),
+      ),
+    );
+  }
+}
