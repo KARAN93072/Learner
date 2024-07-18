@@ -14,25 +14,21 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-      providers: [
-        ChangeNotifierProvider(create: (_) => CountProvider()),
-        ChangeNotifierProvider(create: (_) => SliderProvider()),
-        ChangeNotifierProvider(create: (_) => FavoriteProvider()),
-        ChangeNotifierProvider(create: (_) => ThemeChangerProvider()),
-      ],
-      child: Builder(
-        builder: (BuildContext context) {
-          final themeChanger = Provider.of<ThemeChangerProvider>(context);
+        providers: [
+          ChangeNotifierProvider(create: (_) => CountProvider()),
+          ChangeNotifierProvider(create: (_) => SliderProvider()),
+          ChangeNotifierProvider(create: (_) => FavoriteProvider()),
+          ChangeNotifierProvider(create: (_) => ThemeChangerProvider()),
+        ],
+        child: Builder(builder: (context) {
+          final themeDataProvider = Provider.of<ThemeChangerProvider>(context);
           return MaterialApp.router(
-            // themeMode: themeChanger.themeMode,
-            // theme: ThemeData(primarySwatch: Colors.blueGrey),
-            // darkTheme: ThemeData(brightness: Brightness.dark),
-            theme: themeChanger.onTheme,
+            debugShowCheckedModeBanner: false,
+            themeMode: themeDataProvider.themeMode,
             darkTheme: ThemeData(brightness: Brightness.dark),
+            theme: ThemeData(primarySwatch: Colors.blueGrey),
             routerConfig: AppRouter.router,
           );
-        },
-      ),
-    );
+        }));
   }
 }
