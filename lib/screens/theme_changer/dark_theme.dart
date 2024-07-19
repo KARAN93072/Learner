@@ -14,13 +14,15 @@ class DarkThemeScreen extends StatelessWidget {
         title: const Text('Theme'),
       ),
       body: Center(
-        child: Consumer<ThemeChangerProvider>(builder: (context, value, child)=>
-           Switch(
+        child: Consumer<ThemeChangerProvider>(
+          builder: (context, value, child) => Switch(
+            activeColor: const Color.fromARGB(255, 53, 63, 67),
+            activeTrackColor: const Color.fromARGB(255, 30, 34, 34),
             value: themeChangerProvider.themeState,
             onChanged: (newValue) {
               if (value.themeState = newValue) {
                 value.setTheme(ThemeMode.dark);
-              }else{
+              } else {
                 value.setTheme(ThemeMode.light);
               }
             },

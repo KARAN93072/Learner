@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 import 'package:learner/screens/count_1/count_example.dart';
 import 'package:learner/screens/fevorite/favorite_screen.dart';
 import 'package:learner/screens/slider/slider_screen.dart';
 import 'package:learner/screens/theme_changer/dark_theme.dart';
+import 'package:learner/screens/theme_changer/theme_changer_provider.dart';
+import 'package:learner/screens/value_notify_listener/value_notify_listener.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -16,26 +18,25 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Home Screen'),
         centerTitle: true,
+        actions: [
+          Consumer<ThemeChangerProvider>(
+              builder: (context, value, child) => Switch(
+                  activeColor: const Color.fromARGB(255, 53, 63, 67),
+                  activeTrackColor: const Color.fromARGB(255, 30, 34, 34),
+                  value: value.themeState,
+                  onChanged: (newValue) {
+                    if (value.themeState = newValue) {
+                      value.setTheme(ThemeMode.dark);
+                    } else {
+                      value.setTheme(ThemeMode.light);
+                    }
+                  }))
+        ],
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            // Column(
-            //   children: [
-            //     RadioListTile<ThemeMode>(
-            //         title: const Text('Light Mode'),
-            //         value: ThemeMode.light,
-            //         groupValue: themeChanger.themeMode,
-            //         onChanged: themeChanger.setTheme),
-            //     RadioListTile<ThemeMode>(
-            //         title: const Text('Dark Mode'),
-            //         value: ThemeMode.dark,
-            //         groupValue: themeChanger.themeMode,
-            //         onChanged: themeChanger.setTheme)
-            //   ],
-            // ),
-
             FilledButton(
                 onPressed: () {
                   GoRouter.of(context).goNamed(CountExample.id);
@@ -56,6 +57,11 @@ class HomeScreen extends StatelessWidget {
                   GoRouter.of(context).goNamed(DarkThemeScreen.id);
                 },
                 child: const Text('DarkTheme Screen')),
+            FilledButton(
+                onPressed: () {
+                  GoRouter.of(context).goNamed(ValueNotifyListener.id);
+                },
+                child: const Text('STL Widget as STF Widget Use'))
           ],
         ),
       ),

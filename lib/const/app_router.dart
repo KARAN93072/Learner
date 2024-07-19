@@ -5,6 +5,7 @@ import 'package:learner/screens/fevorite/saved_favorite_users.dart';
 import 'package:learner/screens/home/home_screen.dart';
 import 'package:learner/screens/slider/slider_screen.dart';
 import 'package:learner/screens/theme_changer/dark_theme.dart';
+import 'package:learner/screens/value_notify_listener/value_notify_listener.dart';
 
 class AppRouter {
   static GoRouter router = GoRouter(routes: [
@@ -36,7 +37,10 @@ class AppRouter {
           GoRoute(
               path: 'DarkThemeScreen',
               name: DarkThemeScreen.id,
-              builder: (context, state) => const DarkThemeScreen())
+              builder: (context, state) => const DarkThemeScreen()),
+              GoRoute(path: 'ValueNotifyListener',
+              name: ValueNotifyListener.id,
+              builder: (context, state)=> const ValueNotifyListener())
         ]),
   ]);
 }
