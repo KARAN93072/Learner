@@ -40,7 +40,7 @@ class AppRouter {
               builder: (context, state) => const DarkThemeScreen()),
               GoRoute(path: 'ValueNotifyListener',
               name: ValueNotifyListener.id,
-              builder: (context, state)=> const ValueNotifyListener())
+              builder: (context, state)=>  ValueNotifyListener())
         ]),
   ]);
 }
