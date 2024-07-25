@@ -1,5 +1,6 @@
 import 'package:go_router/go_router.dart';
 import 'package:learner/screens/auth/sign_in/login.dart';
+import 'package:learner/screens/auth/sign_up/sign_up.dart';
 import 'package:learner/screens/count_1/count_example.dart';
 import 'package:learner/screens/fevorite/favorite_screen.dart';
 import 'package:learner/screens/fevorite/saved_favorite_users.dart';
@@ -46,7 +47,10 @@ class AppRouter {
           GoRoute(
               path: 'LoginScreen',
               name: LoginScreen.id,
-              builder: (context, state) =>  LoginScreen())
+              builder: (context, state) =>  LoginScreen()),
+              GoRoute(path: "SignUpScreen",
+              name: SignUpScreen.id,
+              builder: (context, state)=> const SignUpScreen())
         ]),
   ]);
 }

@@ -18,6 +18,8 @@ class LoginScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            const Text("Email : eve.holt@reqres.in"),
+            const Text("Password : cityslicka"),
             TextFormField(
               controller: emailController,
               decoration: const InputDecoration(hintText: "Email"),

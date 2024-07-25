@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:learner/screens/auth/sign_in/login.dart';
+import 'package:learner/screens/auth/sign_up/sign_up.dart';
 import 'package:learner/screens/count_1/count_example.dart';
 import 'package:learner/screens/fevorite/favorite_screen.dart';
 import 'package:learner/screens/slider/slider_screen.dart';
@@ -67,7 +68,12 @@ class HomeScreen extends StatelessWidget {
                 onPressed: () {
                   GoRouter.of(context).goNamed(LoginScreen.id);
                 },
-                child: const Text('Login Screen'))
+                child: const Text('Login Screen')),
+            FilledButton(
+                onPressed: () {
+                  GoRouter.of(context).goNamed(SignUpScreen.id);
+                },
+                child: const Text('SignUp Screen')),
           ],
         ),
       ),
